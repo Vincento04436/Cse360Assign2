@@ -92,6 +92,42 @@ public class SimpleList {	//The purpose of this class is to be able to create an
 	        }
 	}
 	
+
+    public void append(int num) { //append the parameter to the end of the list, if list is full capacity will increase 50%
+
+        if (count == list.length) {	//Increases capacity when full
+
+             int half = count/2;
+             modify(count + half);
+
+        }
+
+        list[count] = num; //With a given index, adds "num"
+
+        count++;
+
+    }
+
+    public int first() {	//This returns the first element in array
+
+        if (count == 0) {	//This just makes sure an error does not occur if no first element exists
+	     
+	     return -1; //Was told in class to return -1 instead of exception, which is why I reuploaded the assignment
+
+        }
+
+        return list[0]; //Returns first element
+
+    }
+
+
+    public int size() { //Return the current number of possible locations in the list
+    	
+        return list.length;
+
+    }
+	
+	
 	public int count() {
 		return count; //returning the current count
 	}
